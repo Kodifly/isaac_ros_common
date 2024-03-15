@@ -153,6 +153,10 @@ DOCKER_ARGS+=("-e NVIDIA_DRIVER_CAPABILITIES=all")
 DOCKER_ARGS+=("-e FASTRTPS_DEFAULT_PROFILES_FILE=/usr/local/share/middleware_profiles/rtps_udp_profile.xml")
 DOCKER_ARGS+=("-e ROS_DOMAIN_ID")
 DOCKER_ARGS+=("-e USER")
+# DOCKER_ARGS+=("--device /dev/snd")
+# DOCKER_ARGS+=("-e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native")
+# DOCKER_ARGS+=("-v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native")
+# DOCKER_ARGS+=("--group-add $(getent group audio | cut -d: -f3)")
 
 if [[ $PLATFORM == "aarch64" ]]; then
     DOCKER_ARGS+=("-v /usr/bin/tegrastats:/usr/bin/tegrastats")
