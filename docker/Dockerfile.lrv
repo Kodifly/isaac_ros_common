@@ -14,8 +14,10 @@ RUN add-apt-repository universe && apt-get update && apt-get install -y libgstre
     gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools \
     gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
 
-RUN pip3 install --upgrade pip && pip3 install setuptools==58.2.0 ultralytics
+RUN pip3 install --upgrade pip && pip3 install setuptools==58.2.0 ultralytics pygame tensorrt
 RUN apt-get install -y ros-humble-isaac-ros-image-proc
+RUN apt-get update && apt-get install -y alsa-utils mpg123
+
 
 # RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 # RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add -
